@@ -14,6 +14,6 @@ rm tmp_index.js
 rm -rf app/
 
 
-embark run --nodashboard &
+#embark run --nodashboard &
 
-npm start
+#npm start
