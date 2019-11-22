@@ -2,7 +2,7 @@ name=$1
 mkdir app
 embark scaffold $name devicename:string sensor1:uint256 sensor2:string currentStream:ipfsImage
 mv app/*.js src/
-echo -e "import $name from './$name';\n$(cat src/index.js)" > src/index.js 
+echo "import $name from './$name';$(cat src/index.js)" > src/index.js 
 
 sed -e "/<ul>/a\\
 <li><Link to=\"/$name\">$name</Link></li>" < src/index.js > tmp_index.js
