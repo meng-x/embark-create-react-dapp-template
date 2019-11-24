@@ -1,6 +1,6 @@
 name=$1
 mkdir app
-embark scaffold $name devicename:string sensor1:uint256 sensor2:string currentStream:ipfsImage
+embark scaffold $@ 
 mv app/*.js src/
 echo "import $name from './$name';$(cat src/index.js)" > src/index.js 
 
