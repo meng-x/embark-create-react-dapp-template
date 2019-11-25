@@ -58,7 +58,31 @@ module.exports = {
       }
     }
   },
-
+  thingsledger: {
+    deployment: {
+      host: "54.238.149.168", // Host of the blockchain node
+      port: 18866, // Port of the blockchain node
+      type: "ws", // Type of connection (ws or rpc),
+      accounts: [
+        {   
+          privateKey: "0xe75b784b3d19bd709443454e2bb00e044074c66a7d754ef9869920ff031a2598" //0x9de4099afE35123274291E06CEB82c86105d7232
+        }   
+      ]   
+    },  
+    // order of connections the dapp should connect to
+    dappConnection: [
+      "$WEB3"  // uses pre existing web3 object if available (e.g in Mist)
+      // "ws://54.238.149.168:18866",
+      // "http://54.238.149.168:18666"
+    ],  
+    gas: "auto",
+    contracts: {
+      SimpleStorage: {
+        fromIndex: 0,
+        args: [100]
+      }   
+    }   
+  },  
   // default environment, merges with the settings in default
   // assumed to be the intended environment by `embark run`
   development: {

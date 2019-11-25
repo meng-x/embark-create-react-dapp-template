@@ -41,7 +41,28 @@ module.exports = {
       }
     ]*/
   },
-
+  thingsledger: {
+    networkType: "custom",
+    networkId: 666,
+    rpcHost: "54.238.149.168", // HTTP-RPC server listening interface (default: "localhost")
+    rpcPort: 18666, // HTTP-RPC server listening port (default: 8545)
+    rpcCorsDomain: { // Domains from which to accept cross origin requests (browser enforced). This can also be a comma separated list
+      auto: true, // When "auto" is true, Embark will automatically set the cors to the address of the webserver
+      additionalCors: [] // Additional CORS domains to add to the list. If "auto" is false, only those will be added
+    },  
+    wsRPC: true, // Enable the WS-RPC server
+    wsOrigins: { // Same thing as "rpcCorsDomain", but for WS origins
+      auto: true,
+      additionalCors: []
+    },  
+    wsHost: "54.238.149.168", // WS-RPC server listening interface (default: "localhost")
+    wsPort: 18866, // WS-RPC server listening port (default: 8546)
+    accounts: [
+      {   
+        privateKey: "0xe75b784b3d19bd709443454e2bb00e044074c66a7d754ef9869920ff031a2598"
+      }   
+    ]   
+  }, 
   // default environment, merges with the settings in default
   // assumed to be the intended environment by `embark run` and `embark blockchain`
   development: {
